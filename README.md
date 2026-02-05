@@ -89,6 +89,24 @@ PDF Upload
 Query Execution
 
 Retrieved Context & Answer
+
+## 📸 Project Results
+
+### 🔹 Upload Document
+![Upload](project-result/response1.png)
+
+### 🔹 Query Execution
+![Query](project-result/response2.png)
+
+### 🔹 Retrieved Context
+![Context](project-result/response3.png)
+
+### 🔹 LLM Answer
+![Answer](project-result/response4.png)
+
+### 🔹 Final Response
+![Response](project-result/response5.png)
+
 -----------------------------------------------------------------------------------------------------------
 🚀 Future Improvements
 
