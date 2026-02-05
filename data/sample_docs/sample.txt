@@ -1,0 +1,2 @@
+Retrieval-Augmented Generation (RAG) enables LLMs
+to answer questions using external knowledge sources.
