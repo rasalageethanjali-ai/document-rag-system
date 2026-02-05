@@ -90,15 +90,24 @@ Query Execution
 
 Retrieved Context & Answer
 
+
+```md
 ## 📸 Project Results
-## Project Results
 
+### Upload Document
 ![Upload](project-result/response1.png)
-![Query](project-result/response2.png)
-![Context](project-result/response3.png)
-![Answer](project-result/response4.png)
-![Response](project-result/response5.png)
 
+### Query Execution
+![Query](project-result/response2.png)
+
+### Retrieved Context
+![Context](project-result/response3.png)
+
+### LLM Answer
+![Answer](project-result/response4.png)
+
+### Final Response
+![Response](project-result/response5.png)
 
 -----------------------------------------------------------------------------------------------------------
 🚀 Future Improvements
