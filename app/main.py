@@ -7,7 +7,6 @@ app = FastAPI(title="Document RAG System")
 app.include_router(upload_router, prefix="/upload")
 app.include_router(query_router, prefix="/query")
 
-
 @app.get("/")
 def health():
     return {"status": "RAG backend running"}
