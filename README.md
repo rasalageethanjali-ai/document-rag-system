@@ -1,44 +1,44 @@
-# \# 📄 Document RAG System (Retrieval-Augmented Generation)
+\# 📄 Document RAG System (Retrieval-Augmented Generation)
 
-# 
 
-# An end-to-end \*\*Retrieval-Augmented Generation (RAG)\*\* backend that allows users to upload documents and ask questions grounded strictly in the uploaded content.
 
-# 
+An end-to-end \*\*Retrieval-Augmented Generation (RAG)\*\* backend that allows users to upload documents and ask questions grounded strictly in the uploaded content.
 
-# This project demonstrates a \*\*production-style RAG pipeline\*\* built using Python, FastAPI, vector embeddings, and semantic search.
 
-# 
 
-# ---
+This project demonstrates a \*\*production-style RAG pipeline\*\* built using Python, FastAPI, vector embeddings, and semantic search.
 
-# 
 
-# \## 🚀 Features
 
-# 
+---
 
-# \- 📂 Upload PDF documents
 
-# \- ✂️ Chunk and embed document text
 
-# \- 🧠 Semantic search using vector similarity
+\## 🚀 Features
 
-# \- 🧾 Strict RAG prompt (no hallucinations)
 
-# \- ⚡ FastAPI backend with REST endpoints
 
-# \- 🧪 Modular, testable architecture
+\- 📂 Upload PDF documents  
 
-# 
+\- ✂️ Chunk and embed document text  
 
-# ---
+\- 🧠 Semantic search using vector similarity  
 
-# 
+\- 🧾 Strict RAG prompt (no hallucinations)  
 
-# \## 🏗️ System Architecture
+\- ⚡ FastAPI backend with REST endpoints  
 
-# 
+\- 🧪 Modular, testable architecture  
+
+
+
+---
+
+
+
+\## 🏗️ System Architecture
+
+
 
 User Query
 
@@ -66,13 +66,13 @@ LLM Response
 
 
 
-
-
 ---
 
 
 
 \## 📁 Project Structure
+
+
 
 
 
@@ -136,7 +136,7 @@ document-rag-system/
 
 \- \*\*SentenceTransformers\*\* – Text embeddings
 
-\- \*\*Chroma / Vector Store\*\* – Semantic retrieval
+\- \*\*Vector Store (Chroma-style)\*\* – Semantic retrieval
 
 \- \*\*PyPDF2\*\* – PDF parsing
 
@@ -172,6 +172,8 @@ document-rag-system/
 
 \### 1️⃣ Clone the repository
 
+
+
 ```bash
 
 git clone https://github.com/rasalageethanjali-ai/document-rag-system.git
@@ -182,11 +184,17 @@ cd document-rag-system
 
 
 
-2️⃣ Create \& activate virtual environment
+\### 2️⃣ Create \& activate virtual environment
+
+
+
+```bash
 
 python -m venv venv
 
 venv\\Scripts\\activate
+
+
 
 
 
@@ -196,15 +204,13 @@ pip install -r requirements.txt
 
 
 
-4️⃣ Start the server
-
-uvicorn app.main:app --reload
-
 
 
 4️⃣ Start the server
 
 uvicorn app.main:app --reload
+
+
 
 
 
@@ -212,39 +218,35 @@ uvicorn app.main:app --reload
 
 
 
-FastAPI auto-docs available
+FastAPI auto-generated docs available
+
+
 
 
 
 🔹 Upload Document
 
-
-
 POST /upload
 
 
 
-Upload a PDF file
+Description
 
 
 
-Text is extracted, chunked, embedded, and stored
+Upload a PDF document
+
+
+
+Text is extracted, chunked, embedded, and stored in the vector database
+
+
 
 
 
 🔹 Ask Question
 
-
-
 POST /query?question=...
-
-
-
-Performs semantic search
-
-
-
-Generates answer using RAG prompt
 
 
 
@@ -254,7 +256,7 @@ Generates answer using RAG prompt
 
 
 
-Upload a PDF
+Upload a PDF document
 
 
 
@@ -262,7 +264,9 @@ Ask:
 
 
 
-“What does the document say about RAG?”
+What does the document say about RAG?
+
+
 
 
 
@@ -278,7 +282,7 @@ Builds context
 
 
 
-Generates grounded answer
+Generates a grounded answer
 
 
 
@@ -292,19 +296,21 @@ Generates grounded answer
 
 
 
-🔑 Auth \& user sessions
+🔑 Authentication \& user sessions
 
 
 
-🗄️ Persistent vector DB
+🗄️ Persistent vector database
 
 
 
-🤖 Real LLM integration
+🤖 Real LLM integration (OpenAI / Ollama / HuggingFace)
 
 
 
-📊 UI frontend
+📊 Frontend UI
+
+
 
 
 
@@ -319,10 +325,4 @@ Rasala Geethanjali
 AI \& ML Engineering Student
 
 Focused on building real-world GenAI systems
-
-
-
-
-
-
 
