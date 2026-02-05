@@ -29,7 +29,6 @@ RAG Prompt
 ↓
 LLM Answer
 
---------------------------------------------------------
 ---
 
 ## 📁 Project Structure
@@ -48,7 +47,6 @@ document-rag-system/
 ├── README.md
 └── .gitignore
 
-------------
 ---
 
 ## ⚙️ Tech Stack
@@ -63,13 +61,12 @@ document-rag-system/
 
 ## ▶️ Run Locally
 
-```bat
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 
-----------------------------------------------------------------------------------------------------
+---
 🔹 API Endpoints
 Upload Document
 
@@ -80,7 +77,7 @@ Query Document
 
 POST /query?question=...
 Semantic search → context → RAG answer
------------------------------------------------------------------------------------------------------------
+---
 📸 Project Results
 Swagger UI
 
@@ -91,7 +88,6 @@ Query Execution
 Retrieved Context & Answer
 
 
-```md
 ## 📸 Project Results
 
 ### Upload Document
@@ -109,7 +105,7 @@ Retrieved Context & Answer
 ### Final Response
 ![Response](project-result/response5.png)
 
------------------------------------------------------------------------------------------------------------
+---
 🚀 Future Improvements
 
 Cloud deployment (Render / AWS)
@@ -121,10 +117,9 @@ Persistent vector DB
 Real LLM integration
 
 Frontend UI
-------------------------------------------------------------------------------------------------------------
+---
 👩‍💻 Author
 
 Rasala Geethanjali
 AI & ML Engineering Student
 Focused on real-world GenAI systems
-----------------------------------------------------------------------------------------------------------
