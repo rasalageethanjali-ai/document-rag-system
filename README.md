@@ -164,165 +164,74 @@ document-rag-system/
 
 ---
 
-
-
-\## ▶️ Running Locally
-
-
-
-\### 1️⃣ Clone the repository
-
-
+### 2️⃣ Create & activate virtual environment
 
 ```bash
-
-git clone https://github.com/rasalageethanjali-ai/document-rag-system.git
-
-cd document-rag-system
-
-
-
-
-
-\### 2️⃣ Create \& activate virtual environment
-
-
-
-```bash
-
 python -m venv venv
+venv\Scripts\activate
 
-venv\\Scripts\\activate
-
-
-
-
+---
 
 3️⃣ Install dependencies
-
 pip install -r requirements.txt
 
-
-
-
+----
 
 4️⃣ Start the server
-
 uvicorn app.main:app --reload
 
-
-
-
-
+----
 📘 API Documentation
-
-
-
 FastAPI auto-generated docs available
 
+---
 
-
-
-
-🔹 Upload Document
+Upload Document
 
 POST /upload
 
-
-
 Description
-
-
 
 Upload a PDF document
 
-
-
 Text is extracted, chunked, embedded, and stored in the vector database
-
-
-
-
-
+------
 🔹 Ask Question
+POST /query?question=
+Description
 
-POST /query?question=...
+Performs semantic search on stored documents
 
-
-
-
+Generates a grounded answer using a strict RAG prompt
+----
 
 🧪 Example Workflow
 
-
-
 Upload a PDF document
 
-
-
 Ask:
-
-
-
 What does the document say about RAG?
-
-
-
-
-
 System:
-
-
-
 Retrieves relevant chunks
-
-
-
 Builds context
-
-
-
 Generates a grounded answer
-
-
-
-
+------
 
 🚀 Future Improvements
 
-
-
 🌍 Cloud deployment (Render / Railway / AWS)
 
-
-
-🔑 Authentication \& user sessions
-
-
+🔑 Authentication & user sessions
 
 🗄️ Persistent vector database
 
-
-
 🤖 Real LLM integration (OpenAI / Ollama / HuggingFace)
 
-
-
 📊 Frontend UI
-
-
-
-
-
-
+-------
 
 👩‍💻 Author
 
-
-
 Rasala Geethanjali
-
-AI \& ML Engineering Student
-
+AI & ML Engineering Student
 Focused on building real-world GenAI systems
-
