@@ -1,237 +1,110 @@
-\# 📄 Document RAG System (Retrieval-Augmented Generation)
+# 📄 Document RAG System  
+> Retrieval-Augmented Generation backend using FastAPI, embeddings, and vector search
 
-
-
-An end-to-end \*\*Retrieval-Augmented Generation (RAG)\*\* backend that allows users to upload documents and ask questions grounded strictly in the uploaded content.
-
-
-
-This project demonstrates a \*\*production-style RAG pipeline\*\* built using Python, FastAPI, vector embeddings, and semantic search.
-
-
+An end-to-end **RAG (Retrieval-Augmented Generation)** system that allows users to upload documents and ask questions strictly grounded in uploaded content.
 
 ---
 
-
-
-\## 🚀 Features
-
-
-
-\- 📂 Upload PDF documents  
-
-\- ✂️ Chunk and embed document text  
-
-\- 🧠 Semantic search using vector similarity  
-
-\- 🧾 Strict RAG prompt (no hallucinations)  
-
-\- ⚡ FastAPI backend with REST endpoints  
-
-\- 🧪 Modular, testable architecture  
-
-
+## 🚀 Features
+- 📂 Upload PDF documents
+- ✂️ Chunk & embed document text
+- 🧠 Semantic search using vector similarity
+- 🧾 Strict RAG prompt (no hallucinations)
+- ⚡ FastAPI backend
+- 🧪 Modular, production-style architecture
 
 ---
 
+## 🏗️ Architecture Flow
 
-
-\## 🏗️ System Architecture
-
-
-
-User Query
-
+User Question
 ↓
-
 Embedding Model
-
 ↓
-
 Vector Store (Similarity Search)
-
 ↓
-
 Relevant Context
-
 ↓
-
 RAG Prompt
-
 ↓
+LLM Answer
 
-LLM Response
-
-
-
-
-
+--------------------------------------------------------
 ---
 
-
-
-\## 📁 Project Structure
-
-
-
-
+## 📁 Project Structure
 
 document-rag-system/
 
-│
-
 ├── app/
-
-│ ├── api/
-
-│ │ ├── upload.py # PDF upload endpoint
-
-│ │ └── query.py # Question answering endpoint
-
-│ │
-
-│ ├── ingestion/ # Loading, cleaning, chunking
-
+│ ├── api/ # Upload & query endpoints
 │ ├── embeddings/ # Embedding model wrapper
-
-│ ├── retrieval/ # Vector store logic
-
-│ ├── generation/ # RAG prompt + LLM interface
-
-│ │
-
+│ ├── retrieval/ # Vector store & retriever
+│ ├── generation/ # Prompt & LLM interface
 │ └── main.py # FastAPI entry point
-
 │
-
-├── data/
-
-│ └── chroma/ # Vector store persistence
-
-│
-
+├── project-result/ # Execution screenshots
 ├── requirements.txt
-
 ├── README.md
-
 └── .gitignore
 
+------------
+---
 
-
-
-
-
+## ⚙️ Tech Stack
+- Python 3.11
+- FastAPI
+- Sentence-Transformers
+- ChromaDB
+- PyPDF2
+- Uvicorn
 
 ---
 
+## ▶️ Run Locally
 
-
-\## ⚙️ Tech Stack
-
-
-
-\- \*\*Python 3.11\*\*
-
-\- \*\*FastAPI\*\* – API framework
-
-\- \*\*SentenceTransformers\*\* – Text embeddings
-
-\- \*\*Vector Store (Chroma-style)\*\* – Semantic retrieval
-
-\- \*\*PyPDF2\*\* – PDF parsing
-
-\- \*\*Uvicorn\*\* – ASGI server
-
-
-
----
-
-
-
-\## 🧠 RAG Design Principles
-
-
-
-\- Answers are generated \*\*only from retrieved context\*\*
-
-\- If context is missing → model explicitly says so
-
-\- No guessing, no hallucination
-
-\- Clear separation of ingestion, retrieval, and generation
-
-
-
----
-
-### 2️⃣ Create & activate virtual environment
-
-```bash
+```bat
 python -m venv venv
 venv\Scripts\activate
-
----
-
-3️⃣ Install dependencies
 pip install -r requirements.txt
-
-----
-
-4️⃣ Start the server
 uvicorn app.main:app --reload
 
-----
-📘 API Documentation
-FastAPI auto-generated docs available
-
----
-
+----------------------------------------------------------------------------------------------------
+🔹 API Endpoints
 Upload Document
 
 POST /upload
+Uploads PDF → chunks → embeddings → vector DB
 
-Description
+Query Document
 
-Upload a PDF document
+POST /query?question=...
+Semantic search → context → RAG answer
+-----------------------------------------------------------------------------------------------------------
+📸 Project Results
+Swagger UI
 
-Text is extracted, chunked, embedded, and stored in the vector database
-------
-🔹 Ask Question
-POST /query?question=
-Description
+PDF Upload
 
-Performs semantic search on stored documents
+Query Execution
 
-Generates a grounded answer using a strict RAG prompt
-----
-
-🧪 Example Workflow
-
-Upload a PDF document
-
-Ask:
-What does the document say about RAG?
-System:
-Retrieves relevant chunks
-Builds context
-Generates a grounded answer
-------
-
+Retrieved Context & Answer
+-----------------------------------------------------------------------------------------------------------
 🚀 Future Improvements
 
-🌍 Cloud deployment (Render / Railway / AWS)
+Cloud deployment (Render / AWS)
 
-🔑 Authentication & user sessions
+Authentication & sessions
 
-🗄️ Persistent vector database
+Persistent vector DB
 
-🤖 Real LLM integration (OpenAI / Ollama / HuggingFace)
+Real LLM integration
 
-📊 Frontend UI
--------
-
+Frontend UI
+------------------------------------------------------------------------------------------------------------
 👩‍💻 Author
 
 Rasala Geethanjali
 AI & ML Engineering Student
-Focused on building real-world GenAI systems
+Focused on real-world GenAI systems
+----------------------------------------------------------------------------------------------------------
